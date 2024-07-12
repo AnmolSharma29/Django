@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Breaking News India | Newspaper{% endblock %}</title>
+    <link rel="stylesheet" href="{% static '/css/home.css' %}">
+    <link rel="stylesheet" href="{% static '/css/base.css' %}">
+    <link rel="shortcut icon" href="{% static '/images/favicon.ico' %}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Forum&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="nav-container">
+                <div class="nav-details">
+                    <p class="nav-date" style="font-size: 120%;">Day & Date</p> <!-- This is current date. -->
+                    <hr style="width: 50%;">
+                    <p class="nav-weather">Temperature</p> <!-- This is current temperature of New Delhi -->
+                </div>
+                <h1 class="nav-heading">Newspaper</h1>
+                <div class="nav-details">
+                    <a href="https://www.youtube.com/shorts/SXHMnicI6Pg" class="nav-date" style="font-size: 120%;text-align: right;" target="_blank">Sign Up</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="marquee-headlines">
+            <div class="marquee-content">
+                <marquee direction="left">
+                    <div class="headlines-details">
+                        {% for n in headlineData %}
+                        <span>{{n.headline}} | </span>
+                        {% endfor %}
+                    </div>
+                </marquee>
+                <div class="line"></div>
+                <h3 class="headlines">Headlines</h3>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    {% load static %}
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h1 style="letter-spacing: 1.5px;">Newspaper</h1>
+                <h2 style="letter-spacing: 1.5px;">inc.</h2>
+            </div> 
+            <div class="follow">
+                <img class="icons" src="{% static '/images/social_icons.svg' %}" alt="instagram_icon" style="height: 1.5rem;">
+                <p style="text-align: right;">Follow us</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static '/JavaScript/home.js' %}"></script>
+    </body>
+    </html>

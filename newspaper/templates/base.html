@@ -1,0 +1,17 @@
+{% extends "headerNfooter.html" %}
+{% block content %}
+
+
+    <div class="main-container">
+        <div class="news-container">
+            <h2>{{topNewsData.topNews_heading}}</h2>
+            <h3>{{topNewsData.topNews_category}}</h3>
+            <h4>Posted on {{topNewsData.topNews_date}}</h4>
+            <div class="news-image">
+                <img src="/media/{{topNewsData.topNews_image}}" alt="{{topNewsData.topNews_heading}}">
+            </div>
+            <p>{{topNewsData.topNews_des}}</p>
+        </div>
+    </div>
+
+{% endblock %}
