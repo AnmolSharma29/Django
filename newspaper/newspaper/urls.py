@@ -21,12 +21,13 @@ from django.conf.urls.static import static
 from . import views
 from newspaper import views
 from top_news.views import NewsListView, NewsDetailView
+from sports.views import SportsListView, SportsDetailView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homePage, name='home'),
-    path('base/', views.base),
     path('top_news/<id>/', views.top_news),
+    path('sports/<id>/', views.sportsPage),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

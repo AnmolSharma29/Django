@@ -1,0 +1,17 @@
+{% extends "headerNfooter.html" %}
+{% block content %}
+
+
+    <div class="main-container">
+        <div class="news-container">
+            <h2>{{sportData.sports_heading}}</h2>
+            <h3>{{sportData.sports_category}}</h3>
+            <h4>Posted on {{sportData.sports_date}}</h4>
+            <div class="news-image">
+                <img src="/media/{{sportData.sports_image}}" alt="{{sportData.sports_heading}}">
+            </div>
+            <p>{{sportData.sports_des|safe}}</p>
+        </div>
+    </div>
+
+{% endblock %}
