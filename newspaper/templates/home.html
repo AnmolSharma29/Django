@@ -5,9 +5,13 @@
     <div class="editorial">
         <h2>Editorial</h2>
         <hr>
+        {% for n in editorialData %}
+        <a href="/editorial/{{n.id}}" class="no-underline">
         <div class="editorial-news">
-            Lorem ipsum dolor sit amet consecte-tur...
+            <p>{{n.editorial_heading|truncatewords:10}}</p>
         </div>
+        </a>
+        {% endfor %}
     </div>
     <div class="top-news">
         <h2>Top News</h2>

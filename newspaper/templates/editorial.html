@@ -1,0 +1,19 @@
+{% extends "headerNfooter.html" %}
+{% block content %}
+
+
+    <div class="main-container">
+        <div class="news-container">
+            <h1 style="text-align: center;">EDITORIAL</h1>
+            <hr style="margin: 10px auto; width: 50%; border-top: 3px solid #00B1CD;">
+            <h2>{{editorialData.editorial_heading}}</h2>
+            <h3>{{editorialData.editorial_category}}</h3>
+            <h4>Posted on {{editorialData.editorial_date}}</h4>
+            <div class="news-image">
+                <img src="/media/{{editorialData.editorial_image}}" alt="{{editorialData.editorial_image}}">
+            </div>
+            <p>{{editorialData.editorial_des|safe}}</p>
+        </div>
+    </div>
+
+{% endblock %}

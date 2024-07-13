@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'headlines',
     'top_news',
-    'sports'
+    'sports',
+    'editorial'
 ]
 
 MIDDLEWARE = [
