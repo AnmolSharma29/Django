@@ -18,24 +18,24 @@ def homePage(request):
     }
     return render(request,"home.html",data)
 
-def top_news(request,id):
+def top_news(request,slug):
     headlineData = Headlines.objects.all()
-    topNewsData = topNews.objects.get(id=id)
+    topNewsData = topNews.objects.get(slug=slug)
     return render(request,'base.html',{
         'headlineData':headlineData,
         'topNewsData':topNewsData
     })
 
-def sportsPage(request,id):
+def sportsPage(request,slug):
     headlineData = Headlines.objects.all()
-    sportData = Sports.objects.get(id=id)
+    sportData = Sports.objects.get(sports_slug=slug)
     return render(request,'sports.html',{
         'headlineData':headlineData,
         'sportData':sportData
     })
-def editorialPage(request,id):
+def editorialPage(request,slug):
     headlineData = Headlines.objects.all()
-    editorialData = Editorial.objects.get(id=id)
+    editorialData = Editorial.objects.get(editorial_slug=slug)
     return render(request,'editorial.html',{
         'headlineData':headlineData,
         'editorialData':editorialData

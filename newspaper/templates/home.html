@@ -6,7 +6,7 @@
         <h2>Editorial</h2>
         <hr>
         {% for n in editorialData %}
-        <a href="/editorial/{{n.id}}" class="no-underline">
+        <a href="/editorial/{{n.editorial_slug}}" class="no-underline">
         <div class="editorial-news">
             <p>{{n.editorial_heading|truncatewords:10}}</p>
         </div>
@@ -17,7 +17,7 @@
         <h2>Top News</h2>
         <hr>
         {% for n in topNewsData %}
-        <a href="/top_news/{{n.id}}" class="no-underline"> 
+        <a href="/top_news/{{n.slug}}" class="no-underline"> 
             <div class="sub-top-news">
                 <div class="top-news-text no-underline">
                     <h3>{{n.topNews_heading|truncatewords:15}}</h3>
@@ -34,7 +34,7 @@
         <h2>Sports</h2>
         <hr>
         {% for n in sportData %}
-        <a href="/sports/{{n.id}}" class="no-underline">
+        <a href="/sports/{{n.sports_slug}}" class="no-underline">
         <div class="sports-news no-underline">
             <p>{{n.sports_heading|truncatewords:10}}</p>
         </div>

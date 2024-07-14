@@ -26,9 +26,9 @@ from sports.views import SportsListView, SportsDetailView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homePage, name='home'),
-    path('top_news/<id>/', views.top_news),
-    path('sports/<id>/', views.sportsPage),
-    path('editorial/<id>/', views.editorialPage),
+    path('top_news/<slug>/', views.top_news),
+    path('sports/<slug>/', views.sportsPage),
+    path('editorial/<slug>/', views.editorialPage),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
