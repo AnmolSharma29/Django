@@ -103,7 +103,14 @@ body{
 }
 .editorial-news{
     border: solid 1px #cccccc;
-    border-radius: 9px;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    font-weight: 700;
+}
+.editorial-news:hover{
+    border: solid 1px #444444;
+    border-radius: 15px;
     margin: 10px;
     padding: 10px;
     font-weight: 700;
