@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: #E6E6E6;
+    margin: 0px;
+}
+
+/* heading style */
+.nav{
+    background-color: black;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+}
+.nav-container{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+.nav-heading{
+    margin: 0px auto;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3.5rem;
+}
+.nav-details{
+    display: grid;
+    margin: 0px;
+    width: 15%;
+    font-family: "Forum", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.nav-date{
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+.nav-details > p{
+    margin: 0.5rem 0px;
+}
+
+/* marquee style */
+.marquee-headlines{
+    background-color: white;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.marquee-content{
+    display: flex;
+    flex-direction: row;
+    height: 6vh;
+    width: 70%;
+    align-items: center;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.line{
+    border-right: 3px solid #00B1CD;
+    height: 4vh;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.headlines-details{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Main content style */
+.main-home-body{
+    margin: auto;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.main-home-body h2{
+    margin: 10px 0px;
+    text-align: center;
+}
+.main-home-body hr{
+    border-top: 3px solid #00B1CD;
+    width: 50%;
+    margin: 0px auto;
+}
+.editorial{
+    background-color: white;
+    width: 26%;
+    margin: 20px 0px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 0px #00000050;
+}
+.editorial-news{
+    border: solid 1px #cccccc;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    font-weight: 700;
+}
+.editorial-news:hover{
+    border: solid 1px #444444;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    font-weight: 700;
+}
+.top-news{
+    background-color: white;
+    width: 45%;
+    margin: 20px 10px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 0px #00000050;
+}
+.sub-top-news{
+    border: solid 1px #cccccc;
+    color: black;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.sub-top-news:hover{
+    color: black;
+    border: solid 1px #444444;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.no-underline{
+    text-decoration: none;
+    color: black;
+}
+.sub-top-news h3{
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-right: 10px;
+}
+.top-news-text{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.top-news-image{
+    width: 15vw;
+    height: 10vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: right;
+    border-radius: 10px;
+}
+.top-news-image img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.sports{
+    background-color: white;
+    width: 26%;
+    margin: 20px 0px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 0px #00000050;
+}
+.sports-news{
+    border: solid 1px #cccccc;
+    border-radius: 15px;
+    margin: 10px;
+    font-weight: 700;
+    padding: 10px;
+}
+.sports-news:hover{
+    border: solid 1px #444444;
+    border-radius: 15px;
+    margin: 10px;
+    font-weight: 700;
+    padding: 10px;
+}
+
+/* footer style */
+footer{
+    height: 20vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-container{
+    display: flex;
+    color: white;
+    height: inherit;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    font-family: "Noto Sans", sans-serif;
+}
+.footer-logo{
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-size: large;
+}
+.icons{
+	-webkit-user-drag: none;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #2b2b2b;
+  }
