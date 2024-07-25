@@ -1,0 +1,326 @@
+*{
+    margin: 0;
+}
+.link{
+    text-decoration: none;
+    color: #000000;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #E6E6E6;
+    margin: 0px;
+}
+.banner_video{
+    position: relative;
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    background-color: #00000070;
+    display: grid;
+    grid-template-rows: 0.7fr 1.6fr 0.7fr; 
+}
+.banner_video video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.banner_header{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    align-items: center;
+    height: 90px;
+    margin: 25px;
+}
+#category{
+    margin: auto;
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    z-index: 2;
+}
+#signin{
+    display: flex;
+    justify-content: end;
+    margin-right: 50px;
+    width: 20%;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    width: 20vw;
+    gap: 15px;
+}
+.logo{
+    /* position: absolute;
+    top: 20px;
+    left: 50px; */
+    display: grid; 
+    padding: 0px;
+    margin-left: 50px;
+    width: 20vw;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+}
+.logo img {
+    grid-column: 1 / 2; /* Start at column 1 and span to column 2 */
+    grid-row: 1 / 3; /* Start at row 1 and span to row 3 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40px;
+    -webkit-user-drag: none;
+}
+.logo #urban{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+}
+.logo #trend{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    color: white;
+    align-items:flex-start;
+    justify-content: flex-start;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+}
+.banner_text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: visible;
+    position: relative;
+}
+#trending{
+    color: white;
+    font-family: "DM Serif Display", serif;
+    font-weight: 500; 
+    font-size: 20vw;
+    font-style: italic;
+    height: 40vh;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%,-80%);
+    z-index: 1;
+}
+.banner_text span{
+    margin-left: 15px;
+}
+.banner_text button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: solid 2px white;
+    border-radius: 100px;
+    padding: 5px;
+    width: 225px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    z-index: 3;
+}
+#always{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: 4vw;
+    z-index: 2;
+}
+.banner_arrow{
+    margin: auto;
+}
+
+/* main area css */
+#main-area{
+    background-color: white;
+    padding-bottom: 10px;
+}
+#men{
+    padding-top: 50px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 200%;
+}
+#women{
+    padding-top: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 200%;
+}
+#kids{
+    padding-top: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 200%;
+}
+hr{
+    width: 10%;
+    border-top: solid black 7px;
+    margin-bottom: 20px;
+}
+.main-area-category{
+    margin: 0% 10%;
+}
+.mens-product{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 15px;
+    border: 1px solid rgb(182, 182, 182);
+    border-radius: 15px;
+}
+.p-img-container{
+    width: 100%;
+    height: 100%;   
+    display: flex;
+    overflow: hidden;
+}
+.p-buy-btn{
+    color: #1b4db3;
+    font-weight: 500;
+}
+.p-img a,
+.p-img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.p-img a img{
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: contain;
+    animation: fade 0.6s;
+}
+.p-img-back{
+    display: none;
+}
+.p-img-container:hover .p-img-back{
+    display: block;
+}
+.p-img-container:hover .p-img-front{
+    display: none;
+}
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.p-box-text{
+    margin-top: 5px;
+    width: 100%;
+}
+.product-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: black;
+    margin: 5px 0px;
+    position: relative;
+}
+.product-des{
+    color: #000000;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    transition: all ease 0.4s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.product-des .p-price{
+    color: #000000;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    justify-content: flex-start;
+}
+.price-buy{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.p-price{
+    font-weight: 600;
+}
+.mens-product{
+    width: 95%;
+    margin-right: 10px;
+}
+.slider-btns{
+    display: flex;   
+    width: 100%;
+    justify-content:space-between;
+    align-items: baseline;
+    /* margin: 30px auto 10px auto;
+    padding: 0px 10px; */
+}
+.slider-btns button{
+    position: static;
+}
+
+
+/* footer css */
+footer{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+#nav-bar{
+    background-color: white;
+    display: grid;
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr;
+    padding: 90px 100px 90px 150px;
+}
+#nav-bar ul{
+    list-style-type: none;
+}
+#bottom-image{
+    height: 15vh;
+    overflow: hidden;
+    justify-content: center;
+    position: relative;
+}
+#bottom-image img{
+    max-width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.footer-title{
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: large;
+}
