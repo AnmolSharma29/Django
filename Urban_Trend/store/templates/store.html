@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanTrend</title>
+    <link rel="stylesheet" href="{% static 'Css/index.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="{% static 'images/Urban-trend.ico'%}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'Css/glider.min.css'%}">
+</head>
+<body>
+    <section class="banner_video">
+        <video autoplay muted loop>
+            <source src="{% static 'video/hero_video.mp4'%}" type="video/mp4">
+        </video>
+        <div class="banner_header">
+            <div class="logo">
+                <img src="{% static 'images/Urban_Trend_Logo.svg'%}" alt="Urban_Trend_Logo">
+                <span id="urban">Urban</span>
+                <span id="trend">Trend</span>
+            </div>
+            <div id="category">
+                <a href="#men" class="link" style="color: white;"><span>Men</span></a>
+                <a href="#women" class="link" style="color: white;"><span>Women</span></a>
+                <a href="#kids" class="link" style="color: white;"><span>Kids</span></a>
+            </div>
+            <div id="signin">
+                    <a href="{% url 'cart' %}" class="link">
+                        <img src="{% static 'images/cart.svg'%}" alt="add-to-cart" style="-webkit-user-drag: none;">
+                    </a>
+                    <p id="cart-total" style="padding-right: 10px;">0</p>
+                    <span>Sign in</span>
+                </div>
+        </div>
+        <div class="banner_text">
+            <span id="always">Always</span>
+            <span id="trending">Trending!</span>
+            <button><span>EXPLORE MORE</span>
+                <img src="{% static 'images/Button_Arrow.svg'%}" alt="arrow">
+            </button>
+        </div>
+        <div class="banner_arrow">
+            <a href="#main-area">
+                <img src="{% static 'images/DownArrow.svg'%}" alt="DownArrow">
+            </a>
+        </div>
+    </section>
+    <section id="main-area">
+        <div class="main-area-category">
+            
+            <!-- Slider Btn -->
+            <div class="slider-btns">
+                <h2 id="men">Men's</h2>
+                <div class="s-btn">
+                    <button aria-label="Previous" class="glider-prev">
+                        <img src="{% static 'images/left-arrow.svg'%}" alt="left-arrow" style="-webkit-user-drag: none;">
+                    </button>
+                    <button aria-label="Next" class="glider-next">
+                        <img src="{% static 'images/right-arrow.svg'%}" alt="right-arrow" style="-webkit-user-drag: none;">
+                    </button>
+                </div>
+            </div>
+            <hr>
+
+            <div class="glider-contain">
+                <div class="glider">
+                    
+                    <!-- 1st product  -->
+                    {% for product in products %}
+                    <div class="mens-product">
+                        <div class="p-img-container">
+                            <div class="p-img">
+                                <a href="">
+                                    <img src="{{product.image.url}}" class="p-img-front" alt="Front">
+                                    <img src="{{product.image2.url}}" class="p-img-back" alt="Back">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-box-text">
+                            <div class="product-title">
+                                {{product.brandName}}
+                            </div>
+                            <a href="" class="product-des link">
+                                <span>{{product.name}}</span>
+                            </a>
+                            <div class="price-buy link">
+                                <span class="p-price">₹{{product.price|floatformat:2}}</span>
+                                <a href="" class="p-buy-btn link">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+              
+                
+                <div role="tablist" class="dots"></div>
+            </div>
+
+            
+        </div>
+        <div class="main-area-category">
+            <h2 id="women">Women's</h2>
+            <hr>
+            <div class="women-product">
+
+            </div>
+        </div>
+        <div class="main-area-category">
+            <h2 id="kids">Kids'</h2>
+            <hr>
+            <div class="kids-product">
+
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div id="nav-bar">
+            <ul>
+                <li class="footer-title" id="shop">Shop</li>
+                <br>
+                <br>
+                <a href="#" class="link">
+                    <li>Men</li>
+                    <li>Women</li>
+                    <li>Kids</li>
+                    <li>Unisex</li>
+                </a>
+            </ul>
+            <ul>
+                <li class="footer-title" id="company">Company</li>
+                <br>
+                <br>
+                <a href="#" class="link">
+                    <li>About</li>
+                    <li>FAQ</li>
+                    <li>Collaboration</li>
+                    <li>Contact</li>
+                </a>
+            </ul>
+            <ul>
+                <li class="footer-title" id="social">Social</li>
+                <br>
+                <br>
+                <a href="#" class="link">
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                    <li>X</li>
+                    <li>email@gmail.com</li>
+                </a>
+            </ul>
+            <ul>
+                <li class="footer-title" id="legal">Legal</li>
+                <br>
+                <br>
+                <a href="#" class="link">
+                    <li>Shipping Policy</li>
+                    <li>Return & Exchange</li>
+                    <li>Term of Use</li>
+                    <li>Support</li>
+                </a>
+            </ul>
+        </div>
+        <div id="bottom-image">
+            <img src="{% static 'images/pexels-amanjakhar-2048548.jpg'%}" alt="">
+        </div>
+    </footer>
+    <script src="{% static 'JavaScript/glider.min.js'%}"></script>
+    <script>
+        new Glider(document.querySelector('.glider'), {
+        slidesToScroll: 1,
+        slidesToShow: 4.5,
+        draggable: true,
+        dots: '.dots',
+        arrows: {
+            prev: '.glider-prev',
+            next: '.glider-next'
+        },
+        responsive: [
+        {
+        // screens greater than >= 775px
+        breakpoint: 1200,
+        settings: {
+            // Set to `auto` and provide item width to adjust to viewport
+            slidesToShow: 4.5,
+            slidesToScroll: 2,
+        }
+        },{
+        // screens greater than >= 1024px
+        breakpoint: 900,
+        settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+        }
+        },{
+        // screens greater than >= 1024px
+        breakpoint: 640,
+        settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+        }
+        },{
+        // screens greater than >= 1024px
+        breakpoint: 304,
+        settings: {
+            slidesToShow: 1.5,
+            slidesToScroll: 1,
+        }
+        },{
+        // screens greater than >= 1024px
+        breakpoint: 0,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        }
+        }
+        ]
+    });
+    </script>
+</body>
+</html>
