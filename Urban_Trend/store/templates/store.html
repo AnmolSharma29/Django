@@ -11,6 +11,57 @@
     <link rel="shortcut icon" href="{% static 'images/Urban-trend.ico'%}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'Css/glider.min.css'%}">
+
+    <script type = "text/javascript">
+        var user = '{{request.user}}'
+
+        function getToken(name) {
+		    var cookieValue = null;
+		    if (document.cookie && document.cookie !== '') {
+		        var cookies = document.cookie.split(';');
+		        for (var i = 0; i < cookies.length; i++) {
+		            var cookie = cookies[i].trim();
+		            // Does this cookie string begin with the name we want?
+		            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+		                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+		                break;
+		            }
+		        }
+		    }
+		    return cookieValue;
+		}
+		var csrftoken = getToken('csrftoken');
+        
+        function getCookie(name) {
+		    // Split cookie string and get all individual name=value pairs in an array
+		    var cookieArr = document.cookie.split(";");
+
+		    // Loop through the array elements
+		    for(var i = 0; i < cookieArr.length; i++) {
+		        var cookiePair = cookieArr[i].split("=");
+
+		        /* Removing whitespace at the beginning of the cookie name
+		        and compare it with the given string */
+		        if(name == cookiePair[0].trim()) {
+		            // Decode the cookie value and return
+		            return decodeURIComponent(cookiePair[1]);
+		        }
+		    }
+
+		    // Return null if not found
+		    return null;
+		}
+
+		var cart = JSON.parse(getCookie('cart'))
+		if (cart == undefined){
+			cart = {}
+			console.log('Cart Created!', cart)
+			document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+		}
+        
+		console.log('Cart:', cart)
+
+    </script>
 </head>
 <body>
     <section class="banner_video">
@@ -29,19 +80,19 @@
                 <a href="#kids" class="link" style="color: white;"><span>Kids</span></a>
             </div>
             <div id="signin">
+                    <p id="cart-total" style="padding-right: 10px;">{{cartItems}}</p>
                     <a href="{% url 'cart' %}" class="link">
-                        <img src="{% static 'images/cart.svg'%}" alt="add-to-cart" style="-webkit-user-drag: none;">
+                        <img src="{% static 'images/cart.svg'%}" alt="add-to-cart" style="-webkit-user-drag: none; padding-right: 10px;">
                     </a>
-                    <p id="cart-total" style="padding-right: 10px;">0</p>
                     <span>Sign in</span>
                 </div>
         </div>
         <div class="banner_text">
             <span id="always">Always</span>
             <span id="trending">Trending!</span>
-            <button><span>EXPLORE MORE</span>
+            <!-- <button><span>EXPLORE MORE</span>
                 <img src="{% static 'images/Button_Arrow.svg'%}" alt="arrow">
-            </button>
+            </button> -->
         </div>
         <div class="banner_arrow">
             <a href="#main-area">
@@ -75,7 +126,7 @@
                         <div class="p-img-container">
                             <div class="p-img">
                                 <a href="">
-                                    <img src="{{product.image.url}}" class="p-img-front" alt="Front">
+                                    <img src="{{product.imageURL}}" class="p-img-front" alt="Front">
                                     <img src="{{product.image2.url}}" class="p-img-back" alt="Back">
                                 </a>
                             </div>
@@ -89,7 +140,7 @@
                             </a>
                             <div class="price-buy link">
                                 <span class="p-price">₹{{product.price|floatformat:2}}</span>
-                                <a href="" class="p-buy-btn link">Add to Cart</a>
+                                <button data-product={{product.id}} data-action="add" class="p-buy-btn link update-cart">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -220,5 +271,6 @@
         ]
     });
     </script>
+    <script type="text/javascript" src="{% static 'JavaScript/cart.js'%}"></script>
 </body>
 </html>

@@ -198,8 +198,19 @@ hr{
     overflow: hidden;
 }
 .p-buy-btn{
-    color: #1b4db3;
+    color: #212529;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
+    padding: 5px 10px;
+    border: solid 1px #212529;
+    border-radius: 0.32rem;
+    background-color: white;
+}
+.p-buy-btn:hover{
+    color: white;
+    border: solid 1px #212529;
+    background-color: #212529;
+    cursor: pointer;
 }
 .p-img a,
 .p-img{

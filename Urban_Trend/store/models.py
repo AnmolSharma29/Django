@@ -29,6 +29,14 @@ class Product(models.Model):
     modelnumber = models.CharField(max_length=200, null=True) 
     def __str__(self):
         return self.name
+    
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
 
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
@@ -38,6 +46,15 @@ class Order(models.Model):
     
     def __str__(self):
         return str(self.id)
+    
+    @property
+    def shipping(self):
+        shipping = False
+        orderitems = self.orderltem_set.all()
+        for i in orderitems:
+            if i.product.digital == False:
+                shipping = True
+        return shipping
     
     @property
     def get_cart_total(self):
