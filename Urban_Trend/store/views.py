@@ -14,6 +14,16 @@ def store(request):
     return render(request,"store.html", context)
 
 
+def buyPage(request,id):
+    data = cartData(request)
+    cartItems = data['cartItems']
+
+    products = Product.objects.all() 
+    product = Product.objects.get(id=id)
+    context = {'products':products, 'cartItems':cartItems, 'product':product}
+    return render(request,"buyPage.html",context)
+
+
 def cart(request):
 
     data = cartData(request)
